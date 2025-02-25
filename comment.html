@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+    <style>
+        .comment{
+            background-color: lightblue;
+            border: 1px solid blue;
+            padding: 10px 20px;
+            margin: 20px 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="comment-container">
+        <h1>
+            Comment App
+        </h1>
+        <p id="" class="comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis porro dolores fuga architecto mollitia libero voluptates! Ducimus, voluptatibus velit debitis, eaque inventore sapiente id pariatur voluptate non repellat, ullam doloribus!</p>
+        <p id="" class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ad esse tempora quo porro voluptas. Dolore incidunt inventore nihil repudiandae odit corrupti asperiores, libero nemo illo aliquid enim quo deserunt.</p>
+        <p id="" class="comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos totam exercitationem sed, libero facere itaque sequi deserunt maiores, debitis ea illo quis molestias repellat ut alias ab reprehenderit quod minima.</p>
+    </div>
+    <br>
+    <br>
+    <textarea name="" id="comment-text-area">
+    </textarea>
+    <br>
+    <button id="comment-button">
+        Comment
+    </button>
+    <script>
+        const commentButton = document.getElementById('comment-button')
+        .addEventListener('click', function(){
+            const textArea = document.getElementById('comment-text-area');
+            let textValue = textArea.value;
+
+            const commentContainer =  document.getElementById('comment-container');
+            let newComment = document.createElement('p');
+            newComment.innerText = textValue;
+            newComment.classList = "comment"
+            commentContainer.appendChild(newComment);
+
+            textArea.value = ''
+        })
+    </script>
+</body>
+</html>
